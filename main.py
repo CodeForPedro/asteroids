@@ -10,13 +10,19 @@ def main():
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
+    clock = pygame.time.Clock()
+    dt = 0 
+    
+    # Game Loop
     while True:
-        log_state()
+        log_state() # This just lets just logs the state of the game
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
         screen.fill("black")
-        pygame.display.flip()
+        pygame.display.flip() # This is what updates the display
+        # Below method pauses the game loop until 1/60th of a second has passed, limiting to 60fps.
+        dt = clock.tick(60)/1000
 
 
 if __name__ == "__main__":
