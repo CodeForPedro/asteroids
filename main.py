@@ -22,6 +22,7 @@ def main():
             if event.type == pygame.QUIT:
                 return
         screen.fill("black")
+        player.update(dt)
         player.draw(screen)
         pygame.display.flip() # This is what updates the display
         # Below method pauses the game loop until 1/60th of a second has passed, limiting to 60fps.
