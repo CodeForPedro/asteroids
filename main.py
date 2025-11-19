@@ -49,7 +49,7 @@ def main():
             for shot in shots:
                 if shot.collides_with(asteroid):
                     log_event("asteroid_shot")
-                    asteroid.kill()
+                    asteroid.split()
                     shot.kill()
         pygame.display.flip() # This is what updates the display
         # Below method pauses the game loop until 1/60th of a second has passed, limiting to 60fps.
